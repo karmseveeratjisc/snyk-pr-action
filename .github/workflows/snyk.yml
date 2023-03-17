@@ -1,4 +1,4 @@
-name: Dependabot PR CI
+name: Snyk PR CI
 on:
   schedule:
     - cron: "0 */6 * * *"
@@ -8,8 +8,8 @@ jobs:
     name: Label and approve minor/patch updates
     runs-on: ubuntu-18.04
     steps:
-      - uses: koj-co/dependabot-pr-action@master
+      - uses: condenast/snyk-pr-action@master
         with:
-          token: ${{ secrets.GH_PAT }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           merge-minor: true
           merge-patch: true

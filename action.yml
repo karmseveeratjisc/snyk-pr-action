@@ -1,5 +1,5 @@
-name: "Dependabot Pull Request Action"
-description: "Add labels to, merge, or approve Dependabot pull requests"
+name: "Snyk Pull Request Action"
+description: "Add labels to, merge, or approve Snyk pull requests"
 author: "Koj <https://github.com/koj.co>"
 inputs:
   token:

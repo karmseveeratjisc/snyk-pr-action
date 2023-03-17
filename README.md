@@ -1,10 +1,10 @@
-# 📦 Dependabot Pull Request Action
+# 📦 Snyk Pull Request Action
 
-A GitHub Action to automatically label, approve, and merge pull requests made by Dependabot. This was built because the auto-merge feature was removed when Dependabot became a native-GitHub feature.
+A GitHub Action to automatically label, approve, and merge pull requests made by Snyk. This was built because the auto-merge feature was removed when Snyk became a native-GitHub feature.
 
-[![Build CI](https://github.com/koj-co/dependabot-pr-action/workflows/Build%20CI/badge.svg)](https://github.com/koj-co/dependabot-pr-action/actions?query=workflow%3A%22Build+CI%22)
-[![Release CI](https://github.com/koj-co/dependabot-pr-action/workflows/Release%20CI/badge.svg)](https://github.com/koj-co/dependabot-pr-action/actions?query=workflow%3A%22Release+CI%22)
-[![Node CI](https://github.com/koj-co/dependabot-pr-action/workflows/Node%20CI/badge.svg)](https://github.com/koj-co/dependabot-pr-action/actions?query=workflow%3A%22Node+CI%22)
+[![Build CI](https://github.com/condenast/snyk-pr-action/workflows/Build%20CI/badge.svg)](https://github.com/condenast/snyk-pr-action/actions?query=workflow%3A%22Build+CI%22)
+[![Release CI](https://github.com/condenast/snyk-pr-action/workflows/Release%20CI/badge.svg)](https://github.com/condenast/snyk-pr-action/actions?query=workflow%3A%22Release+CI%22)
+[![Node CI](https://github.com/condenast/snyk-pr-action/workflows/Node%20CI/badge.svg)](https://github.com/condenast/snyk-pr-action/actions?query=workflow%3A%22Node+CI%22)
 
 ## ⭐ Get started
 
@@ -20,7 +20,7 @@ jobs:
     name: Auto-merge minor and patch updates
     runs-on: ubuntu-18.04
     steps:
-      - uses: koj-co/dependabot-pr-action@master
+      - uses: CondeNast/Snyk-pr-action@master
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           merge-minor: true
@@ -35,7 +35,7 @@ Your GitHub token, usually `{{ secrets.GITHUB_TOKEN }}` or a personal access tok
 
 #### Optional inputs
 
-To add labels to the Dependabot pull request, you can specify a comma-separated string of labels:
+To add labels to the Snyk pull request, you can specify a comma-separated string of labels:
 
 | Input               | Description                    |
 | ------------------- | ------------------------------ |
