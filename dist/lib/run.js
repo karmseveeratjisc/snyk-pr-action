@@ -115,7 +115,6 @@ const run = async () => {
                 await autoApprove(pr.number);
         }
     }
-    core_1.info("All done!");
 };
 exports.run = run;
 //# sourceMappingURL=run.js.map
