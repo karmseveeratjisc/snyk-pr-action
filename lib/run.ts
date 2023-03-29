@@ -107,6 +107,4 @@ export const run = async () => {
       if (getInput("approve") || getInput("approve-prerelease")) await autoApprove(pr.number);
     }
   }
-
-  logInfo("All done!");
 };

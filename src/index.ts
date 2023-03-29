@@ -1,8 +1,10 @@
-import { error as logError, setFailed } from "@actions/core";
+import { error as logError, info as logInfo, setFailed } from "@actions/core";
 import { run } from "../lib/run";
 
 run()
-  .then(() => {})
+  .then(() => {
+    logInfo("All done!");
+  })
   .catch((error) => {
     logError(error);
     setFailed(error.message);
