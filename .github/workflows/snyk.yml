@@ -11,5 +11,6 @@ jobs:
       - uses: condenast/snyk-pr-action@master
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          merge-minor: true
+          auto-label: true
+          approve-minor: true
           merge-patch: true
