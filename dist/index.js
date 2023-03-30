@@ -8822,9 +8822,14 @@ const tryAutoMergePR = async (octokit, owner, repo, prNumber, prTitle, delaySeco
         if (delaySeconds > 9) {
             const conflictLabel = core_1.getInput("labels-conflict");
             if (/not mergeable/.test(error.message) && conflictLabel) {
-                await exports.addLabelsToPR(octokit, owner, repo, prNumber, conflictLabel);
-                return;
+                try {
+                    await exports.addLabelsToPR(octokit, owner, repo, prNumber, conflictLabel);
+                }
+                catch (error) {
+                    core_1.error(error);
+                }
             }
+            return;
         }
         await exports.tryAutoMergePR(octokit, owner, repo, prNumber, prTitle, delaySeconds + 1);
     }
