@@ -28,7 +28,6 @@ export const tryAutoMergePR = async (
   prTitle: string,
   delaySeconds = 1
 ) => {
-  if (delaySeconds > 10) return;
   logInfo(`Try to merge PR #${prNumber} after ${delaySeconds} seconds`);
   try {
     await octokit.pulls.merge({
@@ -45,11 +44,23 @@ export const tryAutoMergePR = async (
   } catch (error) {
     logError(error);
     await wait(delaySeconds * 1000);
+    if (delaySeconds > 9) {
+      const conflictLabel = getInput("labels-conflict");
+      if (/not mergeable/.test(error.message) && conflictLabel) {
+        await addLabelsToPR(octokit, owner, repo, prNumber, conflictLabel);
+        return;
+      }
+    }
     await tryAutoMergePR(octokit, owner, repo, prNumber, prTitle, delaySeconds + 1);
   }
 };
 
-export const autoApprovePR = async (octokit: any, owner: string, repo: string, prNumber: number) => {
+export const autoApprovePR = async (
+  octokit: any,
+  owner: string,
+  repo: string,
+  prNumber: number
+) => {
   logInfo(`To auto approve PR #${prNumber}`);
   try {
     await octokit.pulls.createReview({ owner, repo, pull_number: prNumber, event: "APPROVE" });

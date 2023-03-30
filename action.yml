@@ -5,6 +5,8 @@ inputs:
   token:
     required: true
     description: "GitHub token"
+  labels-conflicted:
+    required: false
   labels-major:
     required: false
   auto-label:

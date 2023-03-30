@@ -86,6 +86,8 @@ You can also set the `merge-commit` input if you want a custom merge commit mess
 
 You can also set the `merge-method` if your repo has branch protection rules that require a specific merge method. (default is `squash`.)
 
+When `approve` parameters is set to `true`, when attempting to merge, if the pull request has a status that is not merge-able, you can set `labels-conflicted` parameter to apply custom labels to call for attentions.
+
 ## 📄 License
 
 - Code: [MIT](./LICENSE) © [Koj](https://koj.co)
