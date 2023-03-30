@@ -71,6 +71,8 @@ inputs:
     required: false
   merge-commit:
     required: false
+  merge-method:
+    required: false
 runs:
   using: "node12"
   main: "dist/index.js"

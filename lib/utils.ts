@@ -35,6 +35,7 @@ export const tryAutoMergePR = async (
       owner,
       repo,
       pull_number: prNumber,
+      merge_method: getInput("merge-method") || "squash",
       commit_title: (
         getInput("merge-commit") || `:twisted_rightwards_arrows: Merge #$PR_NUMBER ($PR_TITLE)`
       )
