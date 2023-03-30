@@ -47,9 +47,13 @@ export const tryAutoMergePR = async (
     if (delaySeconds > 9) {
       const conflictLabel = getInput("labels-conflict");
       if (/not mergeable/.test(error.message) && conflictLabel) {
-        await addLabelsToPR(octokit, owner, repo, prNumber, conflictLabel);
-        return;
+        try {
+          await addLabelsToPR(octokit, owner, repo, prNumber, conflictLabel);
+        } catch (error) {
+          logError(error);
+        }
       }
+      return;
     }
     await tryAutoMergePR(octokit, owner, repo, prNumber, prTitle, delaySeconds + 1);
   }
