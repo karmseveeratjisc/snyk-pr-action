@@ -25,6 +25,7 @@ const tryAutoMergePR = async (octokit, owner, repo, prNumber, prTitle, delaySeco
             owner,
             repo,
             pull_number: prNumber,
+            merge_method: core_1.getInput("merge-method") || "squash",
             commit_title: (core_1.getInput("merge-commit") || `:twisted_rightwards_arrows: Merge #$PR_NUMBER ($PR_TITLE)`)
                 .replace("$PR_NUMBER", prNumber.toString())
                 .replace("$PR_TITLE", prTitle),
