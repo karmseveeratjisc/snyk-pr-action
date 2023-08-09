@@ -95,9 +95,9 @@ describe("snyk-pr-action", () => {
       });
 
       // Use the following PR mocks as:
-      // #1017: [Snyk] Upgrade fontfaceobserver from 2.1.0 to 2.3.0
-      // #1016: [Snyk] Upgrade fs-extra from 10.0.0 to 11.0.0
-      // #1015: [Snyk] Upgrade node-fetch from 2.6.7 to 2.6.9
+      // #1017: [Snyk] Security upgrade dd-trace from 0.30.6 to 1.2.0
+      // #1016: [Snyk] Security upgrade fs-extra from 10.0.0 to 11.0.0
+      // #1015: [Snyk] Security upgrade node-fetch from 2.6.7 to 2.6.9
       const { nockDone } = await nockBack("pulls.json");
       await run();
       nockDone();
@@ -230,7 +230,7 @@ describe("snyk-pr-action", () => {
         "condenast",
         "journey-purchase",
         1017,
-        "[Snyk] Upgrade fontfaceobserver from 2.1.0 to 2.3.0"
+        "[Snyk] Security upgrade fontfaceobserver from 2.1.0 to 2.3.0"
       );
       expect(tryAutoMergePR).toHaveBeenNthCalledWith(
         2,
@@ -238,7 +238,7 @@ describe("snyk-pr-action", () => {
         "condenast",
         "journey-purchase",
         1015,
-        "[Snyk] Upgrade node-fetch from 2.6.7 to 2.6.9"
+        "[Snyk] Security upgrade node-fetch from 2.6.7 to 2.6.9"
       );
     });
 
