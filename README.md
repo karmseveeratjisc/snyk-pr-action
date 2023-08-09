@@ -18,7 +18,7 @@ on:
 jobs:
   test:
     name: Auto-merge minor and patch updates
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     steps:
       - uses: CondeNast/Snyk-pr-action@master
         with:
