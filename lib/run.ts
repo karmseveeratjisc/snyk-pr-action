@@ -4,6 +4,7 @@ import { diff } from "semver";
 import { addLabelsToPR, tryAutoMergePR, autoApprovePR } from "./utils";
 
 const SNYK_UPGRADE_PR_TITLE_REGEXP = /\[Snyk\].+?[Uu]pgrade (.+?) from (.+?) to (.+?)$/;
+const SNYK_BRANCH_REGEXP = /^CondeNast:snyk-(?:fix|upgrade)/;
 
 export const run = async () => {
   const token = getInput("token") || process.env.GITHUB_TOKEN;
@@ -21,7 +22,7 @@ export const run = async () => {
   // - has [Snyk] in the title
   // - head commit by Snyk bot
   const openSynkPrs = prs.data.filter(
-    (pr) => pr.title.startsWith("[Snyk]") && pr.head.label.includes("CondeNast:snyk-upgrade")
+    (pr) => pr.title.startsWith("[Snyk]") && pr.head.label.match(SNYK_BRANCH_REGEXP)
   );
 
   logInfo(`Found ${openSynkPrs.length} open Snyk PRs`);

@@ -173,8 +173,8 @@
         "comments_url": "https://api.github.com/repos/CondeNast/journey-purchase/issues/1017/comments",
         "statuses_url": "https://api.github.com/repos/CondeNast/journey-purchase/statuses/34c0be093cb423b7fb0beecf49da0e00d41d9c9c",
         "head": {
-          "label": "CondeNast:snyk-upgrade-bc1fdb0b44538e3df8270af694744aca",
-          "ref": "snyk-upgrade-bc1fdb0b44538e3df8270af694744aca",
+          "label": "CondeNast:snyk-fix-bc1fdb0b44538e3df8270af694744aca",
+          "ref": "snyk-fix-bc1fdb0b44538e3df8270af694744aca",
           "sha": "34c0be093cb423b7fb0beecf49da0e00d41d9c9c",
           "user": {
             "login": "CondeNast",
@@ -627,8 +627,8 @@
         "comments_url": "https://api.github.com/repos/CondeNast/journey-purchase/issues/1015/comments",
         "statuses_url": "https://api.github.com/repos/CondeNast/journey-purchase/statuses/303e1ebe2bd9f917066b66ad2ba92f179c971694",
         "head": {
-          "label": "CondeNast:snyk-upgrade-223df870a7884428bdf023f874dbf75f",
-          "ref": "snyk-upgrade-223df870a7884428bdf023f874dbf75f",
+          "label": "CondeNast:snyk-fix-223df870a7884428bdf023f874dbf75f",
+          "ref": "snyk-fix-223df870a7884428bdf023f874dbf75f",
           "sha": "303e1ebe2bd9f917066b66ad2ba92f179c971694",
           "user": {
             "login": "CondeNast",
