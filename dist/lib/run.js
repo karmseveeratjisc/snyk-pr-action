@@ -6,6 +6,7 @@ const github_1 = require("@actions/github");
 const semver_1 = require("semver");
 const utils_1 = require("./utils");
 const SNYK_UPGRADE_PR_TITLE_REGEXP = /\[Snyk\].+?[Uu]pgrade (.+?) from (.+?) to (.+?)$/;
+const SNYK_BRANCH_REGEXP = /^CondeNast:snyk-(?:fix|upgrade)/;
 const run = async () => {
     const token = core_1.getInput("token") || process.env.GITHUB_TOKEN;
     if (!token)
@@ -20,7 +21,7 @@ const run = async () => {
     // Is this really a Snyk upgrade PR?
     // - has [Snyk] in the title
     // - head commit by Snyk bot
-    const openSynkPrs = prs.data.filter((pr) => pr.title.startsWith("[Snyk]") && pr.head.label.includes("CondeNast:snyk-upgrade"));
+    const openSynkPrs = prs.data.filter((pr) => pr.title.startsWith("[Snyk]") && pr.head.label.match(SNYK_BRANCH_REGEXP));
     core_1.info(`Found ${openSynkPrs.length} open Snyk PRs`);
     for await (const pr of openSynkPrs) {
         core_1.info(`Working on Synk PR...#${pr.number}:${pr.title}`);
