@@ -164,7 +164,7 @@
             "parent": null
           }
         ],
-        "labels": [ ],
+        "labels": [],
         "milestone": null,
         "draft": false,
         "commits_url": "https://api.github.com/repos/CondeNast/journey-purchase/pulls/1017/commits",
@@ -289,11 +289,7 @@
             "allow_forking": false,
             "is_template": false,
             "web_commit_signoff_required": false,
-            "topics": [
-              "martech",
-              "order-forms",
-              "subscriptions"
-            ],
+            "topics": ["martech", "order-forms", "subscriptions"],
             "visibility": "internal",
             "forks": 1,
             "open_issues": 35,
@@ -418,11 +414,7 @@
             "allow_forking": false,
             "is_template": false,
             "web_commit_signoff_required": false,
-            "topics": [
-              "martech",
-              "order-forms",
-              "subscriptions"
-            ],
+            "topics": ["martech", "order-forms", "subscriptions"],
             "visibility": "internal",
             "forks": 1,
             "open_issues": 35,
@@ -618,7 +610,7 @@
             "parent": null
           }
         ],
-        "labels": [ ],
+        "labels": [],
         "milestone": null,
         "draft": false,
         "commits_url": "https://api.github.com/repos/CondeNast/journey-purchase/pulls/1015/commits",
@@ -743,11 +735,7 @@
             "allow_forking": false,
             "is_template": false,
             "web_commit_signoff_required": false,
-            "topics": [
-              "martech",
-              "order-forms",
-              "subscriptions"
-            ],
+            "topics": ["martech", "order-forms", "subscriptions"],
             "visibility": "internal",
             "forks": 1,
             "open_issues": 35,
@@ -872,11 +860,7 @@
             "allow_forking": false,
             "is_template": false,
             "web_commit_signoff_required": false,
-            "topics": [
-              "martech",
-              "order-forms",
-              "subscriptions"
-            ],
+            "topics": ["martech", "order-forms", "subscriptions"],
             "visibility": "internal",
             "forks": 1,
             "open_issues": 35,
@@ -1072,7 +1056,7 @@
             "parent": null
           }
         ],
-        "labels": [ ],
+        "labels": [],
         "milestone": null,
         "draft": false,
         "commits_url": "https://api.github.com/repos/CondeNast/journey-purchase/pulls/1016/commits",
@@ -1197,11 +1181,7 @@
             "allow_forking": false,
             "is_template": false,
             "web_commit_signoff_required": false,
-            "topics": [
-              "martech",
-              "order-forms",
-              "subscriptions"
-            ],
+            "topics": ["martech", "order-forms", "subscriptions"],
             "visibility": "internal",
             "forks": 1,
             "open_issues": 35,
@@ -1326,11 +1306,7 @@
             "allow_forking": false,
             "is_template": false,
             "web_commit_signoff_required": false,
-            "topics": [
-              "martech",
-              "order-forms",
-              "subscriptions"
-            ],
+            "topics": ["martech", "order-forms", "subscriptions"],
             "visibility": "internal",
             "forks": 1,
             "open_issues": 35,
