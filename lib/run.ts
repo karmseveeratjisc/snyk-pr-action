@@ -1,6 +1,6 @@
 import { getInput, info as logInfo } from "@actions/core";
 import { getOctokit } from "@actions/github";
-import { diff } from "semver";
+import { diff, coerce } from "semver";
 import { addLabelsToPR, tryAutoMergePR, autoApprovePR } from "./utils";
 
 const SNYK_UPGRADE_PR_TITLE_REGEXP = /\[Snyk\].+?[Uu]pgrade (.+?) from (.+?) to (.+?)$/;
@@ -58,8 +58,9 @@ export const run = async () => {
     const matches = pr.title.match(SNYK_UPGRADE_PR_TITLE_REGEXP);
     if (matches) {
       let pkgName = matches[1];
-      let from = matches[2];
-      let to = matches[3];
+      let from = coerce(matches[2]);
+      let to = coerce(matches[3]);
+      if (from === null || to === null) continue;
       diffType = diff(from, to);
     }
 
