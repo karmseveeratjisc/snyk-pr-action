@@ -3357,8 +3357,10 @@ const run = async () => {
         const matches = pr.title.match(SNYK_UPGRADE_PR_TITLE_REGEXP);
         if (matches) {
             let pkgName = matches[1];
-            let from = matches[2];
-            let to = matches[3];
+            let from = semver_1.coerce(matches[2]);
+            let to = semver_1.coerce(matches[3]);
+            if (from === null || to === null)
+                continue;
             diffType = semver_1.diff(from, to);
         }
         if (diffType === "major") {
