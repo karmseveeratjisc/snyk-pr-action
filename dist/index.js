@@ -3327,8 +3327,8 @@ const run = async () => {
     const tryAutoMerge = utils_1.tryAutoMergePR.bind(null, octokit, owner, repo);
     const autoApprove = utils_1.autoApprovePR.bind(null, octokit, owner, repo);
     const prs = await octokit.pulls.list({ owner, repo, state: "open" });
-    core_1.info(`Found ${prs.length} open PRs`);
-    for (const pr of prs) {
+    core_1.info(`Found ${prs.data.length} open PRs`);
+    for (const pr of prs.data) {
         core_1.info(`${pr.number}:${pr.title}, ${pr.head.label}`);
     }
     // Is this really a Snyk upgrade PR?
