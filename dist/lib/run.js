@@ -6,7 +6,7 @@ const github_1 = require("@actions/github");
 const semver_1 = require("semver");
 const utils_1 = require("./utils");
 const SNYK_UPGRADE_PR_TITLE_REGEXP = /\[Snyk\].+?[Uu]pgrade (.+?) from (.+?) to (.+?)$/;
-const SNYK_BRANCH_REGEXP = /snyk-(?:fix|upgrade)/;
+const SNYK_BRANCH_REGEXP = /:snyk-(?:fix|upgrade)/;
 const run = async () => {
     const token = core_1.getInput("token") || process.env.GITHUB_TOKEN;
     if (!token)
@@ -18,10 +18,6 @@ const run = async () => {
     const tryAutoMerge = utils_1.tryAutoMergePR.bind(null, octokit, owner, repo);
     const autoApprove = utils_1.autoApprovePR.bind(null, octokit, owner, repo);
     const prs = await octokit.pulls.list({ owner, repo, state: "open" });
-    core_1.info(`Found ${prs.length} PRs`);
-    for (const pr of prs) {
-        core_1.info(`${pr.number}:${pr.title}`);
-    }
     // Is this really a Snyk upgrade PR?
     // - has [Snyk] in the title
     // - head commit by Snyk bot
