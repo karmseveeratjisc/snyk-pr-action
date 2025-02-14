@@ -4,7 +4,7 @@ import { diff, coerce } from "semver";
 import { addLabelsToPR, tryAutoMergePR, autoApprovePR } from "./utils";
 
 const SNYK_UPGRADE_PR_TITLE_REGEXP = /\[Snyk\].+?[Uu]pgrade (.+?) from (.+?) to (.+?)$/;
-const SNYK_BRANCH_REGEXP = /^CondeNast:snyk-(?:fix|upgrade)/;
+const SNYK_BRANCH_REGEXP = /snyk-(?:fix|upgrade)/;
 
 export const run = async () => {
   const token = getInput("token") || process.env.GITHUB_TOKEN;
