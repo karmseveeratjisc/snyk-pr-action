@@ -17,7 +17,8 @@ export const run = async () => {
   const autoApprove = autoApprovePR.bind(null, octokit, owner, repo);
 
   const prs = await octokit.pulls.list({ owner, repo, state: "open" });
-  logInfo(prs.length);
+  logInfo('got here');
+  logInfo(`prs= ${prs.length}`);
   for (const pr of prs) {
     logInfo(pr.title);
   }
