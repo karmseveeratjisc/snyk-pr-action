@@ -4,7 +4,7 @@ import { diff, coerce } from "semver";
 import { addLabelsToPR, tryAutoMergePR, autoApprovePR } from "./utils";
 
 const SNYK_UPGRADE_PR_TITLE_REGEXP = /\[Snyk\].+?[Uu]pgrade (.+?) from (.+?) to (.+?)$/;
-const SNYK_BRANCH_REGEXP = /snyk-(?:fix|upgrade)/;
+const SNYK_BRANCH_REGEXP = /:snyk-(?:fix|upgrade)/;
 
 export const run = async () => {
   const token = getInput("token") || process.env.GITHUB_TOKEN;
@@ -17,11 +17,6 @@ export const run = async () => {
   const autoApprove = autoApprovePR.bind(null, octokit, owner, repo);
 
   const prs = await octokit.pulls.list({ owner, repo, state: "open" });
-  logInfo('got here');
-  logInfo(`prs= ${prs.length}`);
-  for (const pr of prs) {
-    logInfo(pr.title);
-  }
   
   // Is this really a Snyk upgrade PR?
   // - has [Snyk] in the title
