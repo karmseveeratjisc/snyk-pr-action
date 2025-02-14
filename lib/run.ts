@@ -17,7 +17,11 @@ export const run = async () => {
   const autoApprove = autoApprovePR.bind(null, octokit, owner, repo);
 
   const prs = await octokit.pulls.list({ owner, repo, state: "open" });
-
+  logInfo(prs.length);
+  for (const pr of prs) {
+    logInfo(pr.title);
+  }
+  
   // Is this really a Snyk upgrade PR?
   // - has [Snyk] in the title
   // - head commit by Snyk bot
