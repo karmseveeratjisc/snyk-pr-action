@@ -6,7 +6,7 @@ const github_1 = require("@actions/github");
 const semver_1 = require("semver");
 const utils_1 = require("./utils");
 const SNYK_UPGRADE_PR_TITLE_REGEXP = /\[Snyk\].+?[Uu]pgrade (.+?) from (.+?) to (.+?)$/;
-const SNYK_BRANCH_REGEXP = /^CondeNast:snyk-(?:fix|upgrade)/;
+const SNYK_BRANCH_REGEXP = /snyk-(?:fix|upgrade)/;
 const run = async () => {
     const token = core_1.getInput("token") || process.env.GITHUB_TOKEN;
     if (!token)
